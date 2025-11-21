@@ -1,70 +1,151 @@
-###################
-What is CodeIgniter
-###################
+# 🚗 Sistem Rental Mobil dengan Metode SERVQUAL
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Proyek ini merupakan aplikasi **Rental Mobil** yang dilengkapi dengan **metode SERVQUAL**, **notifikasi WhatsApp**, dan fitur manajemen lengkap. Sistem ini dibangun untuk membantu pemilik usaha rental meningkatkan kualitas layanan, mengelola transaksi, dan memudahkan pelanggan dalam melakukan pemesanan.
 
-*******************
-Release Information
-*******************
+---
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+## 🔧 Teknologi yang Digunakan
 
-**************************
-Changelog and New Features
-**************************
+* **Backend**: CodeIgniter 3
+* **Database**: MySQL
+* **Frontend**: HTML, CSS, JavaScript, Bootstrap
+* **Notifikasi**: WhatsApp Gateway / API
+* **Metode Analisis**: SERVQUAL (Service Quality)
+* **UI/UX**: Landing Page modern & responsif
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+---
 
-*******************
-Server Requirements
-*******************
+## 👥 Role Pengguna
 
-PHP version 5.6 or newer is recommended.
+Sistem mendukung beberapa role dengan hak akses masing-masing:
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+* **Pemilik**
 
-************
-Installation
-************
+  * Melihat laporan pendapatan
+  * Melihat grafik performa layanan berdasarkan SERVQUAL
+  * Monitoring aktivitas admin & karyawan
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+* **Admin**
 
-*******
-License
-*******
+  * Kelola data mobil
+  * Kelola transaksi
+  * Kelola pelanggan
+  * Mengirim notifikasi WhatsApp
+  * Kelola jadwal peminjaman
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+* **Karyawan**
 
-*********
-Resources
-*********
+  * Input transaksi
+  * Cek ketersediaan mobil
+  * Proses pengembalian
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+* **Pelanggan**
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+  * Registrasi & login
+  * Pesan mobil
+  * Menerima notifikasi WA untuk status pemesanan
 
-***************
-Acknowledgement
-***************
+---
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+## ⭐ Fitur Utama
+
+### 🔹 1. **Landing Page Keren & Responsif**
+
+* Menampilkan informasi layanan rental
+* Menampilkan daftar mobil tersedia
+* Formulir pemesanan cepat
+
+### 🔹 2. **Manajemen Data Mobil**
+
+* Tambah, ubah, hapus data unit mobil
+* Upload foto mobil
+* Status ketersediaan secara realtime
+
+### 🔹 3. **Transaksi Rental Lengkap**
+
+* Pemesanan mobil oleh pelanggan
+* Konfirmasi admin
+* Pengembalian mobil
+* Hitung total biaya otomatis
+
+### 🔹 4. **Notifikasi WhatsApp**
+
+* Notifikasi pemesanan berhasil
+* Notifikasi pengingat pengembalian
+* Notifikasi konfirmasi / penolakan pemesanan
+
+### 🔹 5. **Metode SERVQUAL**
+
+Dipakai untuk mengukur kualitas layanan dari aspek:
+
+* **Tangibles** (bukti fisik)
+* **Reliability** (keandalan)
+* **Responsiveness** (ketanggapan)
+* **Assurance** (jaminan)
+* **Empathy** (empati)
+
+Hasil analisis ditampilkan dalam bentuk grafik & laporan.
+
+### 🔹 6. **Manajemen Pengguna & Role**
+
+* Akses fitur berdasarkan role
+* Log aktivitas
+
+### 🔹 7. **Laporan & Statistik**
+
+* Laporan transaksi
+* Laporan pendapatan
+* Grafik kualitas layanan berbasis SERVQUAL
+
+---
+
+## 🗄️ Struktur Database (Ringkas)
+
+* `users` — Data pengguna
+* `mobil` — Data kendaraan
+* `pelanggan` — Data pelanggan
+* `pemesanan` — Transaksi pemesanan
+* `pengembalian` — Data pengembalian
+* `servqual` — Penilaian kualitas layanan
+* `notifikasi` — Riwayat notifikasi WA
+
+---
+
+## 📦 Cara Instalasi
+
+1. Clone repository:
+
+   ```bash
+   git clone https://github.com/username/rental-mobil-servqual.git
+   ```
+2. Import database dari folder `database/`.
+3. Atur konfigurasi database di:
+
+   ```
+   application/config/database.php
+   ```
+4. Atur base URL di:
+
+   ```
+   application/config/config.php
+   ```
+5. Jalankan project melalui localhost:
+
+   ```
+   http://localhost/rental-mobil
+   ```
+
+---
+
+## 📞 Kontak
+
+Jika ingin menggunakan, memodifikasi, atau membutuhkan versi custom, silakan menghubungi:
+**Nama Developer**: *(diisi sesuai kebutuhan)*
+
+---
+
+## 📜 Lisensi
+
+Project ini menggunakan lisensi bebas sesuai kebutuhan pengguna.
+
+---
